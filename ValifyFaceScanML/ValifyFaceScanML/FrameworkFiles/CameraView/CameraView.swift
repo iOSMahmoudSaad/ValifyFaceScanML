@@ -122,7 +122,26 @@ extension CameraView: AVCapturePhotoCaptureDelegate {
             return
         }
         
-        // faceDetection
+        detectFace(image: frame, completion: { [weak self] isFace in
+            if self!.isCapturedPhoto {
+                
+                self!.isCapturedPhoto = false
+                
+                if !isFace { return }
+                
+                self?.stopCaputreSession()
+                
+                DispatchQueue.main.async {
+                    
+                    let ciImage = CIImage(cvImageBuffer: frame)
+                    let image = UIImage(ciImage: ciImage)
+                    
+
+                    
+                  
+                }
+            }
+        })
     }
 }
 

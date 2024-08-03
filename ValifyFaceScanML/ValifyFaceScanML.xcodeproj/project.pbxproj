@@ -10,6 +10,7 @@
 		66B5F6432C5E70F5006BC73A /* ValifyFaceScanML.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B5F6422C5E70F5006BC73A /* ValifyFaceScanML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66B5F6552C5E7325006BC73A /* Bundle + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F6542C5E7325006BC73A /* Bundle + Extension .swift */; };
 		66B5F6572C5E737D006BC73A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F6562C5E737D006BC73A /* CameraView.swift */; };
+		66B5F6592C5E7419006BC73A /* FaceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F6582C5E7419006BC73A /* FaceDetection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		66B5F6532C5E724A006BC73A /* README4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README4.md; sourceTree = "<group>"; };
 		66B5F6542C5E7325006BC73A /* Bundle + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Extension .swift"; sourceTree = "<group>"; };
 		66B5F6562C5E737D006BC73A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		66B5F6582C5E7419006BC73A /* FaceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				66B5F6562C5E737D006BC73A /* CameraView.swift */,
+				66B5F6582C5E7419006BC73A /* FaceDetection.swift */,
 			);
 			path = CameraView;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B5F6592C5E7419006BC73A /* FaceDetection.swift in Sources */,
 				66B5F6552C5E7325006BC73A /* Bundle + Extension .swift in Sources */,
 				66B5F6572C5E737D006BC73A /* CameraView.swift in Sources */,
 			);
