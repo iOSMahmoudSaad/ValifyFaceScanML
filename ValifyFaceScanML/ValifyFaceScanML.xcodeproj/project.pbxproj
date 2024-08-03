@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		66B5F6432C5E70F5006BC73A /* ValifyFaceScanML.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B5F6422C5E70F5006BC73A /* ValifyFaceScanML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66B5F6552C5E7325006BC73A /* Bundle + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F6542C5E7325006BC73A /* Bundle + Extension .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66B5F63F2C5E70F5006BC73A /* ValifyFaceScanML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ValifyFaceScanML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B5F6422C5E70F5006BC73A /* ValifyFaceScanML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValifyFaceScanML.h; sourceTree = "<group>"; };
-		66B5F64E2C5E7218006BC73A /* README1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README1.md; sourceTree = "<group>"; };
 		66B5F64F2C5E7224006BC73A /* README2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README2.md; sourceTree = "<group>"; };
 		66B5F6512C5E723B006BC73A /* README3.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README3.md; sourceTree = "<group>"; };
 		66B5F6532C5E724A006BC73A /* README4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README4.md; sourceTree = "<group>"; };
+		66B5F6542C5E7325006BC73A /* Bundle + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Extension .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +78,7 @@
 		66B5F64B2C5E7147006BC73A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				66B5F64E2C5E7218006BC73A /* README1.md */,
+				66B5F6542C5E7325006BC73A /* Bundle + Extension .swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,6 +142,7 @@
 				TargetAttributes = {
 					66B5F63E2C5E70F5006BC73A = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 				};
 			};
@@ -177,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B5F6552C5E7325006BC73A /* Bundle + Extension .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -340,6 +344,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -349,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
