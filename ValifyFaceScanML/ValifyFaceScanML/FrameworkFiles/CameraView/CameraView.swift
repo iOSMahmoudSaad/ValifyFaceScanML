@@ -136,9 +136,11 @@ extension CameraView: AVCapturePhotoCaptureDelegate {
                     let ciImage = CIImage(cvImageBuffer: frame)
                     let image = UIImage(ciImage: ciImage)
                     
-
-                    
-                  
+                    let previewPhotoView = PreviewPhotoView.initWith(image)
+                    previewPhotoView.didConfirmPhoto = { [weak self] img in
+                        self?.didCapturePhoto?(img)
+                    }
+                    self?.navigationController?.pushViewController(previewPhotoView, animated: false)
                 }
             }
         })
