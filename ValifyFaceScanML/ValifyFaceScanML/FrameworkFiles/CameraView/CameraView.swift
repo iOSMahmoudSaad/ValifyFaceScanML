@@ -26,18 +26,18 @@ class CameraView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
     
     
     
-    private let CaptureButton: UIButton = {
-        
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        button.layer.cornerRadius = 50
+    private let captureButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 25
         button.layer.borderWidth = 5
         button.layer.borderColor = UIColor.white.cgColor
         return button
     }()
     
     private let cancelButton: UIButton = {
-        
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cancel", for: .normal)
         button.setTitleColor(.white, for: .normal)
         return button
@@ -58,18 +58,32 @@ class CameraView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        previewLayer?.frame = view.bounds
     }
     
     
     private func InitUI() {
         
         view.backgroundColor = .black
-        view.addSubview(CaptureButton)
+        view.addSubview(captureButton)
         view.addSubview(cancelButton)
         
-        CaptureButton.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height - 100)
-        cancelButton.center = CGPoint(x: 50, y: view.frame.size.height - 100)
-        CaptureButton.addTarget(self, action: #selector(didTapCapturePhoto), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+            
+            captureButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            captureButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            captureButton.widthAnchor.constraint(equalToConstant: 50),
+            captureButton.heightAnchor.constraint(equalTo: captureButton.widthAnchor),
+            
+            
+            cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            cancelButton.centerYAnchor.constraint(equalTo: captureButton.centerYAnchor),
+            cancelButton.widthAnchor.constraint(equalToConstant: 100),
+            cancelButton.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        captureButton.addTarget(self, action: #selector(didTapCapturePhoto), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(didCancel), for: .touchUpInside)
         
     }
@@ -118,18 +132,18 @@ extension CameraView: AVCapturePhotoCaptureDelegate {
         
         guard let frame = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             
-            debugPrint(" Cant access image from the sample buffer")
+            debugPrint("Can't access image from the sample buffer")
             return
         }
         
         detectFace(image: frame, completion: { [weak self] isFace in
+            
             if self!.isCapturedPhoto {
                 
                 self!.isCapturedPhoto = false
-                
                 if !isFace { return }
                 
-                self?.stopCaputreSession()
+                self?.stopCaptureSession()
                 
                 DispatchQueue.main.async {
                     
@@ -138,6 +152,7 @@ extension CameraView: AVCapturePhotoCaptureDelegate {
                     
                     let previewPhotoView = PreviewPhotoView.initWith(image)
                     previewPhotoView.didConfirmPhoto = { [weak self] img in
+                        
                         self?.didCapturePhoto?(img)
                     }
                     self?.navigationController?.pushViewController(previewPhotoView, animated: false)
@@ -163,13 +178,9 @@ extension CameraView {
     func beginSession () {
         
         getInputSettings()
-        
         showCameraView()
-        
         startSession()
-        
         getCameraFrames()
-        
         captureSession.commitConfiguration()
     }
     
@@ -188,7 +199,6 @@ extension CameraView {
             
             let captureDeviceInput = try AVCaptureDeviceInput(device: captureDevice)
             captureSession.addInput(captureDeviceInput)
-            
         } catch {
             
             print(error.localizedDescription)
@@ -197,10 +207,10 @@ extension CameraView {
     
     private func showCameraView() {
         
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        self.previewLayer = previewLayer
-        self.view.layer.addSublayer(self.previewLayer)
-        self.previewLayer.frame = self.view.layer.frame
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.videoGravity = .resizeAspectFill
+        view.layer.insertSublayer(previewLayer, at: 0)
+        previewLayer.frame = view.bounds
     }
     
     private func getCameraFrames() {
@@ -220,7 +230,7 @@ extension CameraView {
         connection.isVideoMirrored = true
     }
     
-    func stopCaputreSession() {
+    func stopCaptureSession() {
         
         captureSession.stopRunning()
         if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
