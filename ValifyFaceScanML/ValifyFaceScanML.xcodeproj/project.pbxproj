@@ -13,17 +13,18 @@
 		66B5F6592C5E7419006BC73A /* FaceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F6582C5E7419006BC73A /* FaceDetection.swift */; };
 		66B5F6602C5E753F006BC73A /* PreviewPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F65E2C5E753E006BC73A /* PreviewPhotoView.swift */; };
 		66B5F6612C5E753F006BC73A /* PreviewPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66B5F65F2C5E753F006BC73A /* PreviewPhotoView.xib */; };
+		66B5F6632C5E75C8006BC73A /* ValifyFaceScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B5F6622C5E75C8006BC73A /* ValifyFaceScan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66B5F63F2C5E70F5006BC73A /* ValifyFaceScanML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ValifyFaceScanML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B5F6422C5E70F5006BC73A /* ValifyFaceScanML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValifyFaceScanML.h; sourceTree = "<group>"; };
-		66B5F6532C5E724A006BC73A /* README4.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README4.md; sourceTree = "<group>"; };
 		66B5F6542C5E7325006BC73A /* Bundle + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Extension .swift"; sourceTree = "<group>"; };
 		66B5F6562C5E737D006BC73A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		66B5F6582C5E7419006BC73A /* FaceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetection.swift; sourceTree = "<group>"; };
 		66B5F65E2C5E753E006BC73A /* PreviewPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoView.swift; sourceTree = "<group>"; };
 		66B5F65F2C5E753F006BC73A /* PreviewPhotoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewPhotoView.xib; sourceTree = "<group>"; };
+		66B5F6622C5E75C8006BC73A /* ValifyFaceScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValifyFaceScan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +94,7 @@
 		66B5F64C2C5E714D006BC73A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				66B5F6532C5E724A006BC73A /* README4.md */,
+				66B5F6622C5E75C8006BC73A /* ValifyFaceScan.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -189,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B5F6602C5E753F006BC73A /* PreviewPhotoView.swift in Sources */,
+				66B5F6632C5E75C8006BC73A /* ValifyFaceScan.swift in Sources */,
 				66B5F6592C5E7419006BC73A /* FaceDetection.swift in Sources */,
 				66B5F6552C5E7325006BC73A /* Bundle + Extension .swift in Sources */,
 				66B5F6572C5E737D006BC73A /* CameraView.swift in Sources */,
