@@ -1,0 +1,16 @@
+PODS:
+  - ValifyFaceScanML (1.0.1)
+
+DEPENDENCIES:
+  - ValifyFaceScanML
+
+SPEC REPOS:
+  trunk:
+    - ValifyFaceScanML
+
+SPEC CHECKSUMS:
+  ValifyFaceScanML: a47eb032e20058b9edfac4e368fa8b1d9be6d3b8
+
+PODFILE CHECKSUM: febc4b85537f10642679b5893937580dbd246e19
+
+COCOAPODS: 1.15.2

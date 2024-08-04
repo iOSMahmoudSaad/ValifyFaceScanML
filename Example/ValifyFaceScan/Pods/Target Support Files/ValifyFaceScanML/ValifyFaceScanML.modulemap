@@ -1,0 +1,6 @@
+framework module ValifyFaceScanML {
+  umbrella header "ValifyFaceScanML-umbrella.h"
+
+  export *
+  module * { export * }
+}
